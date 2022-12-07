@@ -11,6 +11,16 @@ public class ApplicationDbContext : DbContext
 
 	protected override void OnModelCreating(ModelBuilder builder)
 	{
+		builder.Entity<Product>().HasData(new Product
+		{
+			ProductId = 1,
+			Name = "Tomato",
+			Price = 9,
+			Description = "Tomato desc...",
+			ImageUrl = "https://dotnettrainingudemy.blob.core.windows.net/restaurant/istock000044051102large.jpg",
+			CategoryName = "Veggetable"
+		});
+
 		base.OnModelCreating(builder);
-	} 
+	}
 }

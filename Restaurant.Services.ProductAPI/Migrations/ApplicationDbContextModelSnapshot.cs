@@ -51,6 +51,17 @@ namespace Restaurant.Services.ProductAPI.Migrations
                     b.HasKey("ProductId");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            ProductId = 1,
+                            CategoryName = "Veggetable",
+                            Description = "Tomato desc...",
+                            ImageUrl = "https://dotnettrainingudemy.blob.core.windows.net/restaurant/istock000044051102large.jpg",
+                            Name = "Tomato",
+                            Price = 9m
+                        });
                 });
 #pragma warning restore 612, 618
         }

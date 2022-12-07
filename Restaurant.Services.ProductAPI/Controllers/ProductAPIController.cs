@@ -27,7 +27,7 @@ public class ProductAPIController : ControllerBase
 		catch (Exception ex)
 		{
 			response.IsSuccess = false;
-			response.ErrorMessages = new List<string> { ex.Message };
+			response.ErrorMessages = new List<string> { ex.ToString() };
 		}
 
 		return response;
@@ -46,7 +46,61 @@ public class ProductAPIController : ControllerBase
 		catch (Exception ex)
 		{
 			response.IsSuccess = false;
-			response.ErrorMessages = new List<string> { ex.Message };
+			response.ErrorMessages = new List<string> { ex.ToString() };
+		}
+
+		return response;
+	}
+
+	[HttpPost]
+	public async Task<object> CreateUpdate([FromBody] ProductDto productDto)
+	{
+		try
+		{
+			var product = await productRepository.CreateUpdateProduct(productDto);
+
+			response.Result = product;
+		}
+		catch (Exception ex)
+		{
+			response.IsSuccess = false;
+			response.ErrorMessages = new List<string> { ex.ToString() };
+		}
+
+		return response;
+	}
+
+	[HttpPut]
+	public async Task<object> Edit([FromBody] ProductDto productDto)
+	{
+		try
+		{
+			var product = await productRepository.CreateUpdateProduct(productDto);
+
+			response.Result = product;
+		}
+		catch (Exception ex)
+		{
+			response.IsSuccess = false;
+			response.ErrorMessages = new List<string> { ex.ToString() };
+		}
+
+		return response;
+	}
+
+	[HttpDelete]
+	public async Task<object> DeleteById(int id)
+	{
+		try
+		{
+			var isSuccess = await productRepository.DeleteProduct(id);
+
+			response.Result = isSuccess;
+		}
+		catch (Exception ex)
+		{
+			response.IsSuccess = false;
+			response.ErrorMessages = new List<string> { ex.ToString() };
 		}
 
 		return response;

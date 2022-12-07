@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Restaurant.Services.ProductAPI\Restaurant.Services.ProductAPI.csproj" />
+  </ItemGroup>
+
 </Project>

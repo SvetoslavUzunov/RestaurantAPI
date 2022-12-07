@@ -17,7 +17,7 @@ public class ProductRepository : IProductRepository
 		this.mapper = mapper;
 	}
 
-	public async Task<ProductDto> CreateProduct(ProductDto productDto)
+	public async Task<ProductDto> CreateUpdateProduct(ProductDto productDto)
 	{
 		var product = mapper.Map<ProductDto, Product>(productDto);
 
