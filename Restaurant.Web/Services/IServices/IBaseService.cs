@@ -4,5 +4,7 @@ namespace Restaurant.Web.Services.IServices;
 
 public interface IBaseService
 {
-	public ResponseDto responseModel { get; set; } 
+	public ResponseDto responseModel { get; set; }
+
+	public Task<T> SendAsync<T>(ApiRequest apiRequest);
 }

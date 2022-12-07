@@ -2,7 +2,7 @@
 
 namespace Restaurant.Web.Services.IServices;
 
-public interface IProductService
+public interface IProductService : IBaseService
 {
 	public Task<T> GetAllProductsAsync<T>();
 
