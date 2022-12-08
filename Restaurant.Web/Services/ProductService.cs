@@ -1,5 +1,4 @@
-﻿using Restaurant.Services.ProductAPI.Models.Dto;
-using Restaurant.Web.Models;
+﻿using Restaurant.Web.Models;
 using Restaurant.Web.Services.IServices;
 
 namespace Restaurant.Web.Services;
@@ -16,35 +15,42 @@ public class ProductService : BaseService, IProductService
 	public async Task<T> CreateProductAsync<T>(ProductDto productDto)
 		=> await this.SendAsync<T>(new ApiRequest()
 		{
-			ApiType = StaticData.ApiType.POST,
+			ApiType = StaticDetails.ApiType.POST,
 			Data = productDto,
-			Url = StaticData.ProductAPIBase + "/api/products",
+			Url = StaticDetails.ProductAPIBase + "/api/products",
 			AccessToken = ""
 		});
 
-	public Task<T> DeleteProductByIdAsync<T>(int id)
-	{
-		return this.SendAsync<T>(new ApiRequest()
+	public async Task<T> DeleteProductByIdAsync<T>(int id)
+		=> await this.SendAsync<T>(new ApiRequest()
 		{
-			ApiType = StaticData.ApiType.POST,
-			Data = productDto,
-			Url = StaticData.ProductAPIBase + "/api/products",
+			ApiType = StaticDetails.ApiType.POST,
+			Url = StaticDetails.ProductAPIBase + "/api/products",
 			AccessToken = ""
 		});
-	}
 
-	public Task<T> GetAllProductsAsync<T>()
-	{
-		throw new NotImplementedException();
-	}
+	public async Task<T> GetAllProductsAsync<T>()
+		=> await this.SendAsync<T>(new ApiRequest()
+		{
+			ApiType = StaticDetails.ApiType.GET,
+			Url = StaticDetails.ProductAPIBase + "/api/products",
+			AccessToken = ""
+		});
 
-	public Task<T> GetProductByIdAsync<T>(int id)
-	{
-		throw new NotImplementedException();
-	}
+	public async Task<T> GetProductByIdAsync<T>(int id)
+		=> await this.SendAsync<T>(new ApiRequest()
+		{
+			ApiType = StaticDetails.ApiType.GET,
+			Url = StaticDetails.ProductAPIBase + "/api/products" + id,
+			AccessToken = ""
+		});
 
-	public Task<T> UpdateProductAsync<T>(ProductDto productDto)
-	{
-		throw new NotImplementedException();
-	}
+	public async Task<T> UpdateProductAsync<T>(ProductDto productDto)
+		=> await this.SendAsync<T>(new ApiRequest()
+		{
+			ApiType = StaticDetails.ApiType.PUT,
+			Data = productDto,
+			Url = StaticDetails.ProductAPIBase + "/api/products",
+			AccessToken = ""
+		});
 }

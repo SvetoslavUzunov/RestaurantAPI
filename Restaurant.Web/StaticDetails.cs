@@ -1,6 +1,6 @@
 ﻿namespace Restaurant.Web;
 
-public static class StaticData
+public static class StaticDetails
 {
 	public static string ProductAPIBase { get; set; }
 

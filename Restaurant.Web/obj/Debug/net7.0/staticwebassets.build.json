@@ -1,11 +1,23 @@
 {
   "Version": 1,
-  "Hash": "44BWcktNPuSYNEBdlSylGiTqSr9feuDfbdML3oqAvKY=",
+  "Hash": "DqWmn3A2SxhgyeueDs8/CJ5XOXYtFPWaetEHFwvkKyc=",
   "Source": "Restaurant.Web",
   "BasePath": "_content/Restaurant.Web",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\SvetoslavUzunov\\Documents\\GitHub\\RestaurantAPI\\Restaurant.Services.ProductAPI\\Restaurant.Services.ProductAPI.csproj",
+      "Version": 2,
+      "Source": "Restaurant.Services.ProductAPI",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
   "DiscoveryPatterns": [
     {
       "Name": "Restaurant.Web\\wwwroot",

@@ -1,4 +1,4 @@
-﻿using static Restaurant.Web.StaticData;
+﻿using static Restaurant.Web.StaticDetails;
 
 namespace Restaurant.Web.Models;
 
