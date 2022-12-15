@@ -89,7 +89,8 @@ public class ProductAPIController : ControllerBase
 	}
 
 	[HttpDelete]
-	public async Task<object> DeleteById(int id)
+	[Route("{id}")]
+	public async Task<object> Delete(int id)
 	{
 		try
 		{

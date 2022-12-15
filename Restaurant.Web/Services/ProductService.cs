@@ -21,11 +21,11 @@ public class ProductService : BaseService, IProductService
 			AccessToken = ""
 		});
 
-	public async Task<T> DeleteProductByIdAsync<T>(int id)
+	public async Task<T> DeleteProductAsync<T>(int id)
 		=> await this.SendAsync<T>(new ApiRequest()
 		{
-			ApiType = StaticDetails.ApiType.POST,
-			Url = StaticDetails.ProductAPIBase + "/api/products",
+			ApiType = StaticDetails.ApiType.DELETE,
+			Url = StaticDetails.ProductAPIBase + "/api/products/" + id,
 			AccessToken = ""
 		});
 
@@ -41,7 +41,7 @@ public class ProductService : BaseService, IProductService
 		=> await this.SendAsync<T>(new ApiRequest()
 		{
 			ApiType = StaticDetails.ApiType.GET,
-			Url = StaticDetails.ProductAPIBase + "/api/products" + id,
+			Url = StaticDetails.ProductAPIBase + "/api/products/" + id,
 			AccessToken = ""
 		});
 

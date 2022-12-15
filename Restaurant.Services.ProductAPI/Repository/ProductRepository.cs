@@ -45,7 +45,7 @@ public class ProductRepository : IProductRepository
 				return false;
 			}
 
-			context.Remove(product);
+			context.Products.Remove(product);
 			await context.SaveChangesAsync();
 			return true;
 		}

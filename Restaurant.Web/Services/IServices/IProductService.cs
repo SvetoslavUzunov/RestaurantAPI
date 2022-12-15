@@ -12,5 +12,5 @@ public interface IProductService : IBaseService
 
 	public Task<T> UpdateProductAsync<T>(ProductDto productDto);
 
-	public Task<T> DeleteProductByIdAsync<T>(int id);
+	public Task<T> DeleteProductAsync<T>(int id);
 }
