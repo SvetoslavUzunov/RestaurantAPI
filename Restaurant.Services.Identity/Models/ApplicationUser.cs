@@ -1,6 +1,10 @@
-﻿namespace Restaurant.Services.Identity.Models;
+﻿using Microsoft.AspNetCore.Identity;
 
-public class ApplicationUser
+namespace Restaurant.Services.Identity.Models;
+
+public class ApplicationUser : IdentityUser
 {
+	public string FirstName { get; set; }
 
+	public string LastName { get; set; } 
 }
